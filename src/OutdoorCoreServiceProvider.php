@@ -26,7 +26,7 @@ class OutdoorCoreServiceProvider extends ServiceProvider
     public function loadCommands()
     {
         $this->commands([
-            \Summitooh\Core\Commands\ModuleGenerator::class,
+            \Summitooh\Module\Commands\ModuleGenerator::class,
         ]);
     }
 }
