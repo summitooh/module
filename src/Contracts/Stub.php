@@ -72,11 +72,10 @@ trait Stub
 
     protected function getStub($type)
     {
-        $vendorPath = '';
-        if (!file_exists('module')) {
-            $vendorPath = 'modules/summitooh/';
-        } else {
+        if (App::environment(['production', 'staging'])) {
             $vendorPath = 'vendor/summitooh/';
+        } else {
+            $vendorPath = 'modules/summitooh/';
         }
 
         return File::get(base_path($vendorPath . "module/src/Stubs/$type.stub"));
