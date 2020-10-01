@@ -1,0 +1,52 @@
+<?php
+
+namespace Summitooh\{{moduleName}}\App\Observers; 
+
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Creating;
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Created;
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Saving;
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Saved;
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Updating;
+use Summitooh\{{moduleName}}\App\Events\{{moduleName}}Updated;
+use Summitooh\{{moduleName}}\App\{{moduleName}};
+
+class {{moduleName}}Observer
+{
+
+    public function creating({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // creating logic... 
+        event(new {{moduleName}}Creating(${{moduleNameSingularLowerCase}}));
+    }
+
+    public function created({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // created logic...
+        event(new {{moduleName}}Created(${{moduleNameSingularLowerCase}}));
+    }
+
+    public function saving({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // saving logic...
+        event(new {{moduleName}}Saving(${{moduleNameSingularLowerCase}}));
+    }
+
+    public function saved({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // saved logic...
+        event(new {{moduleName}}Saved(${{moduleNameSingularLowerCase}}));
+    }
+
+    public function updating({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // updating logic...
+        event(new {{moduleName}}Updating(${{moduleNameSingularLowerCase}}));
+    }
+
+    public function updated({{moduleName}} ${{moduleNameSingularLowerCase}})
+    {
+        // updated logic...
+        event(new {{moduleName}}Updated(${{moduleNameSingularLowerCase}}));
+    }
+
+}

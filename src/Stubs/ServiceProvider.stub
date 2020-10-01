@@ -1,0 +1,39 @@
+<?php
+namespace Summitooh\{{moduleName}};
+
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Summitooh\{{moduleName}}\App\Commands\{{moduleName}}Command; 
+
+class {{moduleName}}ServiceProvider extends ServiceProvider
+{
+
+    public function boot()
+    {
+        $this->loadCommands();
+        $this->loadSettings();    
+    }
+
+    public function register()
+    {
+        //
+    }
+
+    public function loadSettings()
+    {
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
+        $this->loadViewsFrom(__DIR__ . '/views', '{{moduleNameSingularLowerCase}}');
+        $this->publishes([
+            __DIR__ . '/config/{{moduleNameSingularLowerCase}}.php' => config_path('{{moduleNameSingularLowerCase}}.php'),
+            __DIR__ . '/views' => resource_path('views/{{moduleNameSingularLowerCase}}'),
+        ]);
+    }
+
+    public function loadCommands()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                {{moduleName}}Command::class,
+            ]);
+        }
+    }
+}

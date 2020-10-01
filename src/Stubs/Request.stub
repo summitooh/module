@@ -1,0 +1,10 @@
+<?php
+
+namespace Summitooh\{{moduleName}}\App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class {{moduleName}}Request extends FormRequest
+{
+
+}

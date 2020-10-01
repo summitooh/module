@@ -1,0 +1,26 @@
+{
+    "name": "summitooh/{{moduleNameSingularLowerCase}}",
+    "description": "{{description}}",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "{{name}}",
+            "email": "{{email}}"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Summitooh\\{{moduleName}}\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Summitooh\\{{moduleName}}\\{{moduleName}}ServiceProvider"
+            ]
+        }
+    }
+}
